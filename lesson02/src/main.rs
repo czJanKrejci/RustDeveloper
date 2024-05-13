@@ -63,3 +63,42 @@ fn capitalize(input: &str) -> String {
 
     result
 }
+
+// Funkce od Lukase:
+//
+// fn capitalize(input: &str) -> String {
+//     // it is easier to convert the string into a list of characters
+//     let chars: Vec<char> = input.chars().collect();
+
+//     chars               // we take the list of the characters
+//         .windows(2)     // we view the list in windows of two, Hello -> [H,e] [e,l] [l,l], [l,o]
+//         .enumerate()    // we stick a numerical index to every window starting from 0
+//         .map(|(index, first_and_second)| {
+//             if index == 0 {
+//                 // if this is the first character, uppercase it
+//                 // these methods return something that should be converted to a string
+//                 // because of crackhead languages
+//                 // that do uppercase of one char as two chars
+//                 first_and_second[0]
+//                     .to_uppercase()
+//                     .to_string()
+//                 + &first_and_second[1]
+//                     .to_string()
+
+//             } else if first_and_second[0].is_whitespace() {
+//                 // if the first character in this window is whitespace
+//                 // capitalize and return the second one
+//                 first_and_second[1]
+//                     .to_uppercase()
+//                     .to_string()
+
+//             } else {
+//                 // if the first character is anything else,
+//                 // just return the second character
+//                 first_and_second[1]
+//                     .to_string()
+
+//             }
+//         })
+//         .collect::<String>()
+// }
